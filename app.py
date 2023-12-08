@@ -9,7 +9,7 @@ fake = Faker()
 def generate_building_data():
     return {
         'Building_Material': fake.random_element(elements=('Brick', 'Concrete', 'Steel', 'Wood')),
-        'Insulation': random.uniform(0.5, 1.0) if random.choice([True, False]) else np.nan,
+        'Insulation': random.uniform(0.5, 1.0),
         'Age': random.randint(1, 50),
         'HVAC_System': fake.random_element(elements=('Central Heating', 'Heat Pump', 'Radiant Heating')),
         'Window_Type': fake.random_element(elements=('Single Pane', 'Double Pane', 'Triple Pane')),
@@ -34,7 +34,7 @@ def generate_climate_data():
 
 # Function to generate random data for the target label
 def generate_target_label():
-    return fake.random_element(elements=('Positive', 'Negative', 'Neutral'))
+    return fake.random_element(elements=('Positive', 'Negative'))
 
 # Generate synthetic data
 num_samples = 50000
